@@ -1,6 +1,8 @@
 
 #include "Pizza.h"
 
+Pizza::Pizza(const std::string &nume) : nume(nume) {}
+
 Pizza::Pizza(const std::string &nume, const std::vector<Ingredient> &ingrediente) : nume(nume),
                                                                                     ingrediente(ingrediente) {}
 
@@ -30,6 +32,8 @@ Pizza &Pizza::operator=(const Pizza &copie) {
     return *this;
 }
 
-Pizza::~Pizza() {
+Pizza::~Pizza() {}
 
+void Pizza::adauga(Ingredient Ingredient) {
+    ingrediente.push_back(Ingredient);
 }

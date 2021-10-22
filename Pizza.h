@@ -11,6 +11,8 @@ class Pizza {
     std::vector<Ingredient> ingrediente;
 
 public:
+    Pizza(const std::string &nume);
+
     Pizza(const std::string &nume, const std::vector<Ingredient> &ingrediente);
 
     friend std::ostream &operator<<(std::ostream &os, const Pizza &pizza);
@@ -20,6 +22,8 @@ public:
     Pizza& operator=(const Pizza& copie);
 
     virtual ~Pizza();
+
+    void adauga(Ingredient Ingredient);
 };
 
 
