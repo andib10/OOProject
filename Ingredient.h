@@ -14,13 +14,13 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Ingredient &ingredient);
 
-//    const std::string &getDenumire() const;
-//
-//    void setDenumire(const std::string &denumire);
-//
-//    int getCantitate() const;
-//
-//    void setCantitate(int cantitate);
+    virtual ~Ingredient();
+
+    Ingredient (const Ingredient &copie);
+
+    Ingredient& operator=(const Ingredient& copie);
+
+    bool operator==(const Ingredient& copie);
 
 };
 

@@ -1,4 +1,5 @@
 
+#include <algorithm>
 #include "Pizza.h"
 
 Pizza::Pizza(const std::string &nume) : nume(nume) {}
@@ -37,3 +38,18 @@ Pizza::~Pizza() {}
 void Pizza::adauga(Ingredient Ingredient) {
     ingrediente.push_back(Ingredient);
 }
+
+void Pizza::schimba(const Ingredient ingredient1, const Ingredient ingredient2) {
+    bool ok = 0;
+    for (auto &i : ingrediente) {
+        if(i == ingredient1) {
+            ok = 1;
+            i = ingredient2;
+        }
+    }
+    if (ok == 1)
+        std::cout << "am schimbat ingredientele\n";
+    else
+        std::cout << "nu am gasit ingredientul cautat\n";
+}
+

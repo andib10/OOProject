@@ -8,18 +8,25 @@ std::ostream &operator<<(std::ostream &os, const Ingredient &ingredient) {
     return os;
 }
 
-//const std::string &Ingredient::getDenumire() const {
-//    return denumire;
-//}
-//
-//void Ingredient::setDenumire(const std::string &denumire) {
-//    Ingredient::denumire = denumire;
-//}
-//
-//int Ingredient::getCantitate() const {
-//    return cantitate;
-//}
-//
-//void Ingredient::setCantitate(int cantitate) {
-//    Ingredient::cantitate = cantitate;
-//}
+bool Ingredient::operator==(const Ingredient &copie) {
+    if (this->denumire == copie.denumire && cantitate == copie.cantitate)
+        return true;
+    return false;
+}
+
+Ingredient &Ingredient::operator=(const Ingredient &copie) {
+    if(this != &copie) {
+        this->denumire = copie.denumire;
+        this->cantitate = copie.cantitate;
+    }
+    return *this;
+}
+
+Ingredient::~Ingredient() {}
+
+Ingredient::Ingredient(const Ingredient &copie) {
+    this->denumire = copie.denumire;
+    this->cantitate = copie.cantitate;
+}
+
+

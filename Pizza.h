@@ -24,6 +24,10 @@ public:
     virtual ~Pizza();
 
     void adauga(Ingredient Ingredient);
+
+    void schimba(const Ingredient ingredient1, const Ingredient ingredient2);
+
+//    void sterge()
 };
 
 
