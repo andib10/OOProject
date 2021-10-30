@@ -13,3 +13,11 @@ std::ostream &operator<<(std::ostream &os, const Pizzerie &pizzerie) {
         os << angajat;
     return os;
 }
+
+void Pizzerie::adaugaP(Pizza pizza) {
+    pizzas.push_back(pizza);
+}
+
+void Pizzerie::adaugaA(Angajat angajat) {
+    angajati.push_back(angajat);
+}

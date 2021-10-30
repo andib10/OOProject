@@ -17,6 +17,10 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Pizzerie &pizzerie);
 
+    void adaugaP(Pizza pizza);
+
+    void adaugaA(Angajat angajat);
+
 };
 
 

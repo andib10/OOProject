@@ -1,6 +1,6 @@
 
-#include <algorithm>
 #include "Pizza.h"
+
 
 Pizza::Pizza(const std::string &nume) : nume(nume) {}
 
@@ -8,9 +8,9 @@ Pizza::Pizza(const std::string &nume, const std::vector<Ingredient> &ingrediente
                                                                                     ingrediente(ingrediente) {}
 
 std::ostream &operator<<(std::ostream &os, const Pizza &pizza) {
-    os << " nume: " << pizza.nume << " ingrediente: ";
+    os << " nume: " << pizza.nume << "\ningrediente: ";
     for(const auto& ingredient : pizza.ingrediente)
-        os << " ingrediente: " << ingredient;
+        os  << ingredient;
     return os;
 }
 
@@ -20,9 +20,6 @@ Pizza::Pizza(const Pizza &copie) {
     for(const auto& ingredient : copie.ingrediente) {
         this->ingrediente.push_back(ingredient);
     }
-//    for (int i = 0; i < copie.ingrediente.size(); ++i) {
-//        ingrediente[i] = copie.ingrediente[i];
-
 }
 
 Pizza &Pizza::operator=(const Pizza &copie) {
@@ -52,4 +49,5 @@ void Pizza::schimba(const Ingredient ingredient1, const Ingredient ingredient2) 
     else
         std::cout << "nu am gasit ingredientul cautat\n";
 }
+
 

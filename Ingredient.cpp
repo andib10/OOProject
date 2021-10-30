@@ -4,7 +4,7 @@
 Ingredient::Ingredient(const std::string &denumire, int cantitate) : denumire(denumire), cantitate(cantitate) {}
 
 std::ostream &operator<<(std::ostream &os, const Ingredient &ingredient) {
-    os << "denumire: " << ingredient.denumire << ", cantitate: " << ingredient.cantitate << "\t";
+    os << "\ndenumire: " << ingredient.denumire << ", cantitate: " << ingredient.cantitate;
     return os;
 }
 
