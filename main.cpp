@@ -28,7 +28,7 @@ int main() {
     p1.adauga(i4);
 
     p2.schimba(i8, i3);
-//    p2.sterge(i7);
+    p2.sterge(i7);
 
     Pizzerie P("Pizza Hut", {p1}, {a1, a2});
 

@@ -27,7 +27,7 @@ public:
 
     void schimba(const Ingredient ingredient1, const Ingredient ingredient2);
 
-//    void sterge()
+   void sterge(Ingredient ingredient);
 };
 
 

@@ -50,4 +50,14 @@ void Pizza::schimba(const Ingredient ingredient1, const Ingredient ingredient2) 
         std::cout << "nu am gasit ingredientul cautat\n";
 }
 
+void Pizza::sterge(Ingredient ingredient) {
+    for (int i = 0; i < ingrediente.size(); ++i) {
+        if(ingrediente[i] == ingredient){
+            ingrediente.erase(ingrediente.begin()+i);
+            return;
+        }
+    }
+    std::cout << "ingredientul eliminat nu exista\n";
+}
+
 
