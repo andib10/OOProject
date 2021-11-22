@@ -16,7 +16,7 @@ public:
 
     ~Livrator();
 
-    int totalSalary() const;
+    int totalSalary() const override;
 };
 
 

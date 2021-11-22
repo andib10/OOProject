@@ -16,7 +16,7 @@ public:
 
     ~Bucatar();
 
-    int totalSalary() const;
+    int totalSalary() const override;
 };
 
 
