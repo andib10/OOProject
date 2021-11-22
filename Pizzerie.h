@@ -4,22 +4,27 @@
 
 #include <iostream>
 #include <vector>
+#include <memory>
 #include "Angajat.h"
 #include "Pizza.h"
 
 class Pizzerie {
     std::string nume;
     std::vector<Pizza> pizzas;
-    std::vector<Angajat> angajati;
+    std::vector<std::shared_ptr<Angajat>> angajati;
 
 public:
-    Pizzerie(const std::string &nume, const std::vector<Pizza> &pizzas, const std::vector<Angajat> &angajati);
+    Pizzerie(const std::string &nume, const std::vector<Pizza> &pizzas, const std::vector <std::shared_ptr<Angajat>> &angajati);
 
     friend std::ostream &operator<<(std::ostream &os, const Pizzerie &pizzerie);
 
-    void adaugaP(Pizza pizza);
+    void adauga(Pizza pizza);
 
-    void adaugaA(Angajat angajat);
+    void adauga(Angajat& angajat);
+
+    Pizzerie(const Pizzerie &copie);
+
+    Pizzerie &operator=(const Pizzerie &copie);
 
 };
 

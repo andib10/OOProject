@@ -9,9 +9,7 @@ std::ostream &operator<<(std::ostream &os, const Ingredient &ingredient) {
 }
 
 bool Ingredient::operator==(const Ingredient &copie) {
-    if (this->denumire == copie.denumire && cantitate == copie.cantitate)
-        return true;
-    return false;
+    return this->denumire == copie.denumire && cantitate == copie.cantitate;
 }
 
 Ingredient &Ingredient::operator=(const Ingredient &copie) {
