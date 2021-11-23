@@ -7,7 +7,7 @@
 
 class Eroare : public std::runtime_error  {
 public:
-    Eroare(const std::string &arg);
+    explicit Eroare(const std::string &arg);
 };
 
 class ingredient_not_found : public Eroare {
