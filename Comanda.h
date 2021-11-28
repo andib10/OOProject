@@ -6,16 +6,18 @@
 #include "Pizza.h"
 #include "Livrator.h"
 #include "Bucatar.h"
+#include "Pizzerie.h"
 
 class Comanda {
     std::vector<std::pair<Pizza, int>> pizzas;
+    Pizzerie pizzerie;
     Livrator livrator;
-    Bucatar bucatar;
     float total;
     int tip;
     static int nr;
 public:
-    Comanda(const std::vector<std::pair<Pizza, int>> &pizzas, const Livrator &livrator, const Bucatar &bucatar,
+
+    Comanda(const std::vector<std::pair<Pizza, int>> &pizzas, const Pizzerie &pizzerie, const Livrator &livrator,
             int tip);
 
     virtual ~Comanda();
