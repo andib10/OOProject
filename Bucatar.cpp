@@ -19,5 +19,5 @@ void Bucatar::afis(std::ostream &os) const {
 
 int Bucatar::totalSalary() const {
     std::cout << "Bucatarul " << nume << " salariu total: ";
-    return salariu + bonus;
+    return salariu + bonus / 2;
 }
