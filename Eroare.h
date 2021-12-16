@@ -5,7 +5,7 @@
 
 #include <stdexcept>
 
-class Eroare : public std::runtime_error  {
+class Eroare : public std::runtime_error {
 public:
     explicit Eroare(const std::string &arg);
 };
@@ -13,6 +13,11 @@ public:
 class ingredient_not_found : public Eroare {
 public:
     ingredient_not_found();
+};
+
+class eroare_cantitate : public Eroare {
+public:
+    eroare_cantitate();
 };
 
 

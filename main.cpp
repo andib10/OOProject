@@ -34,7 +34,7 @@ int main() {
 
     Pizza p1("Quattro Formaggi");
     Pizza p2("Roma", {i1, i5, i6, i7, i8}, DIMENSIUNE::MEDIE, 22);
-    Pizza p3("Veggie", {i1, i2, i5, i7, i8, i9,  i10}, DIMENSIUNE::MARE, 25);
+    Pizza p3("Veggie", {i1, i2, i5, i7, i8, i9, i10}, DIMENSIUNE::MARE, 25);
 
     p1.adauga(i1);
     p1.adauga(i2);
@@ -42,18 +42,15 @@ int main() {
     p1.adauga(i4);
 
     try {
+        Ingredient i11("garlic", 2);
         p2.schimba(i4, i3);
+        p2.sterge(i7);
+
     }
-    catch(ingredient_not_found &e) {
+    catch(Eroare &e) {
         std::cout << e.what() <<"\n";
     }
 
-    try {
-        p2.sterge(i7);
-    }
-    catch(ingredient_not_found &e) {
-        std::cout << e.what() <<"\n";
-    }
 
     Pizzerie D("Domino's", {p1, p3}, {std::make_shared<Bucatar>(a1), std::make_shared<Bucatar>(a3), std::make_shared<Livrator>(a5)});
     Pizzerie P("Pizza Hut", {p1}, {std::make_shared<Bucatar>(a1), std::make_shared<Bucatar>(a2)});
@@ -70,7 +67,9 @@ int main() {
 
     Comanda C1({{p1, 2}, {p2, 3}}, P, a4, 15);
     Comanda C2({{p1, 1}, {p3, 2}}, D, a5, 10);
-    std::cout << Comanda::getNr() << "\n";
+
+    std::cout << "Pret comanda: " << C1.getTotal() << "\n";
+    std::cout << "Numar comenzi: " << Comanda::getNr();
 
     return 0;
 }
