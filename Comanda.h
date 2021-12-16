@@ -23,6 +23,10 @@ public:
     virtual ~Comanda();
 
     static int getNr();
+
+    float getTotal() const;
+
+    Comanda(const Comanda &copie);
 };
 
 

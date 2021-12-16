@@ -8,7 +8,6 @@ Comanda::Comanda(const std::vector<std::pair<Pizza, int>> &pizzas, const Pizzeri
     for(const auto &pizza : pizzas) {
         total += pizza.second * pizza.first.getPret();
     }
-    std::cout << "\nPret comanda " << nr << ": " << total <<"\n";
 }
 
 Comanda::~Comanda() {
@@ -16,8 +15,16 @@ Comanda::~Comanda() {
 }
 
 int Comanda::getNr() {
-    std::cout << "\nNumar comenzi: ";
     return nr;
 }
 
+
+float Comanda::getTotal() const {
+    return total;
+}
+
+Comanda::Comanda(const Comanda &copie) : pizzas(copie.pizzas), pizzerie(copie.pizzerie),
+                livrator(copie.livrator),  tip(copie.tip), total(copie.total) {
+    nr++;
+}
 
