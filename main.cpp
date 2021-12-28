@@ -7,21 +7,24 @@
 #include "Livrator.h"
 #include "Eroare.h"
 #include "Comanda.h"
+#include "Ingredient_Builder.h"
+#include "Pizza_Factory.h"
 
 int Comanda::nr = 0;
 
 int main() {
 
-    Ingredient i1("mozzarella", 200);
-    Ingredient i2("cheddar", 120);
-    Ingredient i3("emmentaler", 70);
-    Ingredient i4("blue cheese", 35);
-    Ingredient i5("tomato sauce", 100);
-    Ingredient i6("ham", 95);
-    Ingredient i7("olives", 35);
-    Ingredient i8("mushrooms", 50);
-    Ingredient i9("onion", 40);
-    Ingredient i10("sweetcorn", 30);
+    Ingredient_Builder b;
+    Ingredient i1 = b.denumire("mozzarella").cantitate(200).build();
+    Ingredient i2 = b.cantitate(120).denumire("cheddar").build();
+    Ingredient i3 = b.denumire("emmentaler").cantitate(70).build();
+    Ingredient i4 = b.denumire("blue cheese").cantitate(35).build();
+    Ingredient i5 = b.denumire("tomato sauce").cantitate(100).build();
+    Ingredient i6 = b.denumire("ham").cantitate(95).build();
+    Ingredient i7 = b.denumire("olives").cantitate(35).build();
+    Ingredient i8 = b.denumire("mushrooms").cantitate(50).build();
+    Ingredient i9 = b.denumire("onion").cantitate(40).build();
+    Ingredient i10 = b.denumire("sweetcorn").cantitate(30).build();
 
 
     Bucatar a1("Scarlatescu", 8500, 300);
@@ -32,17 +35,14 @@ int main() {
 
     std::cout << a3.totalSalary() << "\n";
 
-    Pizza p1("Quattro Formaggi");
-    Pizza p2("Roma", {i1, i5, i6, i7, i8}, DIMENSIUNE::MEDIE, 22);
-    Pizza p3("Veggie", {i1, i2, i5, i7, i8, i9, i10}, DIMENSIUNE::MARE, 25);
+    Pizza p1 = Pizza_Factory::Quattro_Formaggi_mica();
+    Pizza p2 = Pizza_Factory::Roma_medie();
+    Pizza p3 = Pizza_Factory::Veggie_mare();
 
-    p1.adauga(i1);
-    p1.adauga(i2);
-    p1.adauga(i3);
-    p1.adauga(i4);
+    p3.adauga(i10);
 
     try {
-        Ingredient i11("garlic", 2);
+        Ingredient i11 = b.denumire("garlic").cantitate(2).build();
         p2.schimba(i4, i3);
         p2.sterge(i7);
 

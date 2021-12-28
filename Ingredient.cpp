@@ -2,11 +2,6 @@
 #include "Ingredient.h"
 #include "Eroare.h"
 
-Ingredient::Ingredient(const std::string &denumire, int cantitate) : denumire(denumire), cantitate(cantitate) {
-    if(cantitate < 5)
-        throw(eroare_cantitate());
-}
-
 std::ostream &operator<<(std::ostream &os, const Ingredient &ingredient) {
     os << "\ndenumire: " << ingredient.denumire << ", cantitate: " << ingredient.cantitate;
     return os;

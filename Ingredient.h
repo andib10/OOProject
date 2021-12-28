@@ -8,9 +8,10 @@
 class Ingredient {
     std::string denumire;
     int cantitate;
+    friend class Ingredient_Builder;
 
 public:
-    Ingredient(const std::string &denumire, int cantitate);
+    Ingredient() = default;
 
     friend std::ostream &operator<<(std::ostream &os, const Ingredient &ingredient);
 
