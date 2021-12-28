@@ -12,6 +12,12 @@
 
 int Comanda::nr = 0;
 
+template<typename T, typename... Args>
+void push_back_vec(std::vector<T>& v, Args&&... args)
+{
+    (v.push_back(std::forward<Args>(args)), ...);
+}
+
 int main() {
 
     Ingredient_Builder b;
@@ -39,7 +45,7 @@ int main() {
     Pizza p2 = Pizza_Factory::Roma_medie();
     Pizza p3 = Pizza_Factory::Veggie_mare();
 
-    p3.adauga(i10);
+    push_back_vec(p3.getIngrediente(), i10);
 
     try {
         Ingredient i11 = b.denumire("garlic").cantitate(2).build();
@@ -55,9 +61,8 @@ int main() {
     Pizzerie D("Domino's", {p1, p3}, {std::make_shared<Bucatar>(a1), std::make_shared<Bucatar>(a3), std::make_shared<Livrator>(a5)});
     Pizzerie P("Pizza Hut", {p1}, {std::make_shared<Bucatar>(a1), std::make_shared<Bucatar>(a2)});
 
-    P.adauga(p2);
+    push_back_vec(P.getPizzas(), p2, p3);
     P.adauga(a4);
-    P.adauga(a5);
     D.adauga(a4);
 
     std::cout << P;

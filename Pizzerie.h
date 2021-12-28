@@ -26,6 +26,9 @@ public:
 
     Pizzerie &operator=(const Pizzerie &copie);
 
+    std::vector<Pizza> &getPizzas();
+
+
 };
 
 

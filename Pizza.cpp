@@ -27,7 +27,7 @@ std::ostream &operator<<(std::ostream &os, const enum DIMENSIUNE &dimensune) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Pizza &pizza) {
-    os << " nume: " << pizza.nume << "\ningrediente: ";
+    os << "nume: " << pizza.nume << "\ningrediente: ";
     for(const auto& ingredient : pizza.ingrediente)
         os  << ingredient;
     os << "\ndimensiune: "<< pizza.dim << "\npret: " << pizza.pret;
@@ -86,6 +86,11 @@ void Pizza::sterge(Ingredient &ingredient) {
 
 float Pizza::getPret() const {
     return pret;
+}
+
+
+std::vector<Ingredient> &Pizza::getIngrediente() {
+    return ingrediente;
 }
 
 

@@ -45,3 +45,9 @@ Pizzerie &Pizzerie::operator=(const Pizzerie &copie) {
     }
     return *this;
 }
+
+std::vector<Pizza> &Pizzerie::getPizzas() {
+    return pizzas;
+    // fara const ca sa pot folosi functia template pe vector
+}
+
