@@ -13,8 +13,7 @@
 int Comanda::nr = 0;
 
 template<typename T, typename... Args>
-void push_back_vec(std::vector<T>& v, Args&&... args)
-{
+void push_back_vec(std::vector<T>& v, Args&&... args) {
     (v.push_back(std::forward<Args>(args)), ...);
 }
 
@@ -65,7 +64,8 @@ int main() {
     P.adauga(a4);
     D.adauga(a4);
 
-    std::cout << P;
+    std::cout << P << '\n';
+    std::cout << P.salariiTotale();
 
     std::cout << "\n----------------------------\n";
 

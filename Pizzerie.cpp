@@ -48,6 +48,14 @@ Pizzerie &Pizzerie::operator=(const Pizzerie &copie) {
 
 std::vector<Pizza> &Pizzerie::getPizzas() {
     return pizzas;
-    // fara const ca sa pot folosi functia template pe vector
+}
+
+int Pizzerie::salariiTotale() {
+    int total = 0;
+    int nrAngajati = angajati.size();
+    for (int i = 0; i < nrAngajati; ++i) {
+        total += angajati[i]->totalSalary();
+    }
+    return total;
 }
 

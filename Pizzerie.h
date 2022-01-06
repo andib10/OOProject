@@ -28,6 +28,8 @@ public:
 
     std::vector<Pizza> &getPizzas();
 
+    int salariiTotale();
+
 
 };
 
