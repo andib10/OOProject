@@ -9,6 +9,7 @@
 #include "Comanda.h"
 #include "Ingredient_Builder.h"
 #include "Pizza_Factory.h"
+#include "Template.h"
 
 int Comanda::nr = 0;
 
@@ -44,6 +45,9 @@ int main() {
     Pizza p2 = Pizza_Factory::Roma_medie();
     Pizza p3 = Pizza_Factory::Veggie_mare();
 
+    Info<Pizza> p(p3, "pizza fara gluten");
+    p.afis();
+
     push_back_vec(p3.getIngrediente(), i10);
 
     try {
@@ -58,6 +62,9 @@ int main() {
 
 
     Pizzerie D("Domino's", {p1, p3}, {std::make_shared<Bucatar>(a1), std::make_shared<Bucatar>(a3), std::make_shared<Livrator>(a5)});
+    Info<Pizzerie> d(D, "Pizzerie americana", 5, true);
+    d.afis();
+
     Pizzerie P("Pizza Hut", {p1}, {std::make_shared<Bucatar>(a1), std::make_shared<Bucatar>(a2)});
 
     push_back_vec(P.getPizzas(), p2, p3);
